@@ -3,6 +3,7 @@
 namespace Companue\BroadcastPusher\Providers;
 
 use Companue\BroadcastPusher\BroadcastPusher;
+use Companue\BroadcastPusher\Console\Commands\DispatchEventCommand;
 use Illuminate\Support\ServiceProvider;
 
 class PackageServiceProvider extends ServiceProvider
@@ -49,6 +50,13 @@ class PackageServiceProvider extends ServiceProvider
         $this->publishes([
             $this->basePath('/resources/static') => public_path('vendor/broadcast-pusher')
         ], 'broadcast-pusher-assets');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                // ConsoleCommand::class,
+                DispatchEventCommand::class
+            ]);
+        }
     }
 
     public function register()
