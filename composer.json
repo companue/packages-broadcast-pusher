@@ -1,14 +1,14 @@
 {
-    "name": "companue/package-skeleton",
+    "name": "companue/broadcast-pusher",
     "description": "This is a laravel package for ...",
     "autoload": {
         "psr-4": {
-            "Companue\\PackageSkeleton\\": "src/"
+            "Companue\\BroadcastPusher\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Companue\\PackageSkeleton\\Tests\\": "tests/"
+            "Companue\\BroadcastPusher\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -24,11 +24,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Companue\\PackageSkeleton\\Providers\\PackageServiceProvider",
-                "Companue\\PackageSkeleton\\Providers\\RouteServiceProvider"
+                "Companue\\BroadcastPusher\\Providers\\PackageServiceProvider",
+                "Companue\\BroadcastPusher\\Providers\\RouteServiceProvider"
             ],
             "aliases": {
-                "PackageSkeleton": "Companue\\PackageSkeleton\\Facades\\PackageSkeleton"
+                "BroadcastPusher": "Companue\\BroadcastPusher\\Facades\\BroadcastPusher"
             }
         }
     }

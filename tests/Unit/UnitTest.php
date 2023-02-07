@@ -1,10 +1,10 @@
 <?php
 
-namespace Companue\PackageSkeleton\Tests\Unit;
+namespace Companue\BroadcastPusher\Tests\Unit;
 
-use Companue\PackageSkeleton\Facades\PackageSkeleton;
+use Companue\BroadcastPusher\Facades\BroadcastPusher;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Companue\PackageSkeleton\Tests\TestCase;
+use Companue\BroadcastPusher\Tests\TestCase;
 
 class UnitTest extends TestCase
 {
@@ -13,6 +13,6 @@ class UnitTest extends TestCase
     /** @test */
     function it_returns_ok()
     {
-        $this->assertEquals('OK', PackageSkeleton::installed());
+        $this->assertEquals('OK', BroadcastPusher::installed());
     }
 }

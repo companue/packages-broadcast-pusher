@@ -1,9 +1,9 @@
 <?php
 
-namespace Companue\PackageSkeleton\Tests;
+namespace Companue\BroadcastPusher\Tests;
 
-use Companue\PackageSkeleton\Facades\PackageSkeleton;
-use Companue\PackageSkeleton\Providers\PackageServiceProvider;
+use Companue\BroadcastPusher\Facades\BroadcastPusher;
+use Companue\BroadcastPusher\Providers\PackageServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -26,7 +26,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'PackageSkeleton' => PackageSkeleton::class
+            'BroadcastPusher' => BroadcastPusher::class
         ];
     }
 }

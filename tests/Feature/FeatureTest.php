@@ -1,9 +1,9 @@
 <?php
 
-namespace Companue\PackageSkeleton\Tests\Feature;
+namespace Companue\BroadcastPusher\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Companue\PackageSkeleton\Tests\TestCase;
+use Companue\BroadcastPusher\Tests\TestCase;
 
 class FeatureTest extends TestCase
 {

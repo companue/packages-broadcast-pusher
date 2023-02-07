@@ -1,8 +1,8 @@
 <?php
 
-namespace Companue\PackageSkeleton\Providers;
+namespace Companue\BroadcastPusher\Providers;
 
-use Companue\PackageSkeleton\PackageSkeleton;
+use Companue\BroadcastPusher\BroadcastPusher;
 use Illuminate\Support\ServiceProvider;
 
 class PackageServiceProvider extends ServiceProvider
@@ -11,7 +11,7 @@ class PackageServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(
             $this->basePath('resources/views/'),
-            'package-skeleton'
+            'broadcast-pusher'
         );
 
         $this->loadMigrationsFrom(
@@ -20,7 +20,7 @@ class PackageServiceProvider extends ServiceProvider
 
         $this->loadTranslationsFrom(
             $this->basePath('lang'),
-            'package-skeleton'
+            'broadcast-pusher'
         );
 
         $this->loadJsonTranslationsFrom(
@@ -28,36 +28,36 @@ class PackageServiceProvider extends ServiceProvider
         );
 
         $this->publishes([
-            $this->basePath('lang') => base_path('lang/vendor/package-skeleton')
-        ], 'package-skeleton-translations');
+            $this->basePath('lang') => base_path('lang/vendor/broadcast-pusher')
+        ], 'broadcast-pusher-translations');
 
         $this->publishes([
             $this->basePath('database/migrations') => database_path('migrations')
-        ], 'package-skeleton-migrations');
+        ], 'broadcast-pusher-migrations');
 
         $this->publishes([
-            $this->basePath('resources/views/') => resource_path('views/vendor/package-skeleton')
-        ], 'package-skeleton-views');
+            $this->basePath('resources/views/') => resource_path('views/vendor/broadcast-pusher')
+        ], 'broadcast-pusher-views');
 
         $this->publishes(
             [
-                $this->basePath('config/package-skeleton.php') => base_path('config/package-skeleton.php')
+                $this->basePath('config/broadcast-pusher.php') => base_path('config/broadcast-pusher.php')
             ],
-            'package-skeleton-configuration'
+            'broadcast-pusher-configuration'
         );
 
         $this->publishes([
-            $this->basePath('/resources/static') => public_path('vendor/package-skeleton')
-        ], 'package-skeleton-assets');
+            $this->basePath('/resources/static') => public_path('vendor/broadcast-pusher')
+        ], 'broadcast-pusher-assets');
     }
 
     public function register()
     {
-        $this->app->bind('package-skeleton', function () {
-            return new PackageSkeleton;
+        $this->app->bind('broadcast-pusher', function () {
+            return new BroadcastPusher;
         });
 
-        $this->mergeConfigFrom($this->basePath('config/package-skeleton.php'), 'package-skeleton');
+        $this->mergeConfigFrom($this->basePath('config/broadcast-pusher.php'), 'broadcast-pusher');
     }
 
     protected function basePath($path = '')
