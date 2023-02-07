@@ -17,6 +17,7 @@
             "email": "mimalefdal@tarasheafzar.ir"
         }
     ],
+    "license": "MIT",
     "require": {},
     "require-dev": {
         "orchestra/testbench": "^7.13"
